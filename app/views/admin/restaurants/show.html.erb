@@ -1,11 +1,28 @@
-<h1><%= @restaurant.name %></h1>
-
-Opening Hours:<%= @restaurant.opening_hours %><br>
-Tel: <%= @restaurant.tel %><br>
-Address: <%= @restaurant.address %><br>
-Description:<%= @restaurant.description %><br>
-<%= image_tag @restaurant.image, width: '600px' %>
-
-<br>
-
-<%= link_to 'Back to index', admin_restaurants_path %>
+<div class="container clearfix">
+  <h1><%= @restaurant.name %></h1>
+  <div class="title-btn">
+    <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant), class: "btn btn-default btn-right" %>
+    <%= link_to 'Delete', admin_restaurant_path(@restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
+  </div>
+  <div class="content">
+    <p class="space">Opening Hours: </p><%= @restaurant.opening_hours %><br>
+    <p class="space">Tel: </p><%= @restaurant.tel %><br>
+    <p class="space">Address: </p><%= @restaurant.address %><br><br>
+    <p class="space">Description: </p><%= @restaurant.description %><br>
+    <%= image_tag @restaurant.image, width: '600px' %>
+  </div>
+  <nav aria-label="...">
+    <ul class="pager clearfix">
+      <li>
+        <% if @restaurant.id != Restaurant.first.id %>
+          <%= link_to '←', admin_restaurant_path(@restaurant.id - 1), class: "btn btn-default" %>
+        <% end %>
+      </li>
+      <li>
+        <% if @restaurant.id != Restaurant.last.id %>
+          <%= link_to '→', admin_restaurant_path(@restaurant.id + 1), class: "btn btn-default" %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</div>
