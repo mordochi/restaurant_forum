@@ -14,13 +14,13 @@
   <nav aria-label="...">
     <ul class="pager clearfix">
       <li>
-        <% if @restaurant.id != Restaurant.first.id %>
-          <%= link_to '←', admin_restaurant_path(@restaurant.id - 1), class: "btn btn-default" %>
+        <% if @restaurant.id != Restaurant.last.id %>
+          <%= link_to '←', admin_restaurant_path(@restaurant.id + 1), class: "btn btn-default" %>
         <% end %>
       </li>
       <li>
-        <% if @restaurant.id != Restaurant.last.id %>
-          <%= link_to '→', admin_restaurant_path(@restaurant.id + 1), class: "btn btn-default" %>
+        <% if @restaurant.id != Restaurant.first.id %>
+          <%= link_to '→', admin_restaurant_path(@restaurant.id - 1), class: "btn btn-default" %>
         <% end %>
       </li>
     </ul>
