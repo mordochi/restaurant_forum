@@ -5,17 +5,26 @@
       <span class="glyphicon glyphicon-plus center" aria-hidden="true"></span>
     </a>
   </div>
-  <div class="content">
-    <ul>
+  <table class="content table">
+    <thead>
+      <tr>
+        <th>餐廳名稱</th>
+        <th>分類</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
       <% @restaurants.each do |restaurant| %>
-        <li class="clearfix">
-          <%= restaurant.name %>
-          <%= link_to 'Show', admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.category.name %></td>
+          <td><%= link_to 'Show', admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
           <%= link_to 'Edit', edit_admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
-          <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
-        </li>
+          <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %></td>
+        </tr>
       <% end %>
-    </ul>
-  </div>
+    </tbody>
+  </table>
   <%= paginate @restaurants %><br>
 </div>
