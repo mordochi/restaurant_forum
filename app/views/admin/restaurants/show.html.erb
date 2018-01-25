@@ -1,5 +1,6 @@
 <div class="container clearfix">
   <h1><%= @restaurant.name %></h1>
+  <h3><%= "/ "+@restaurant.category.name %></h3>
   <div class="title-btn">
     <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant), class: "btn btn-default btn-right" %>
     <%= link_to 'Delete', admin_restaurant_path(@restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
