@@ -16,59 +16,37 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :tel, "Tel" %>
-      <%= f.text_field :tel, class: "form-control" %>
+      <%= f.label :category_id, "Category"%>
+      <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: true}, {class: "form-control"} %>
       <% if @restaurant.errors.present? %>
         <ul>
           <% @restaurant.errors.each do |error,message|%>
-            <% if error == :tel %>
-              <li><%= "Tel #{message}" %></li>
+            <% if error == :category %>
+              <li><%= "Category #{message}" %></li>
             <% end %>
           <% end %>
         </ul>
       <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :tel, "Tel" %>
+      <%= f.text_field :tel, class: "form-control" %>
     </div>
 
     <div class="form-group">
       <%= f.label :address, "Address" %>
       <%= f.text_field :address, class: "form-control" %>
-      <% if @restaurant.errors.present? %>
-        <ul>
-          <% @restaurant.errors.each do |error,message|%>
-            <% if error == :address %>
-              <li><%= "Address #{message}" %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% end %>
     </div>
 
     <div class="form-group">
       <%= f.label :opening_hours, "Opening Hours" %>
       <%= f.text_field :opening_hours, class: "form-control" %>
-      <% if @restaurant.errors.present? %>
-        <ul>
-          <% @restaurant.errors.each do |error,message|%>
-            <% if error == :opening_hours %>
-              <li><%= "Opening hours #{message}" %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% end %>
     </div>
 
     <div class="form-group">
       <%= f.label :description, "Description" %>
       <%= f.text_area :description, class: "form-control" %>
-      <% if @restaurant.errors.present? %>
-        <ul>
-          <% @restaurant.errors.each do |error,message|%>
-            <% if error == :description %>
-              <li><%= "Description #{message}" %></li>
-            <% end %>
-          <% end %>
-        </ul>
-      <% end %>
     </div>
 
     <div class="form-group">
