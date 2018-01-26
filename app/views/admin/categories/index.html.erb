@@ -2,7 +2,7 @@
   <div class="left">
     <h1>餐廳分類管理</h1><br>
     <%= link_to '⏎ 餐廳管理', admin_restaurants_path, class: "under-title" %>
-    <div class="form-inline create-bar">
+    <div class="form-inline">
       <%= form_for [:admin, @category] do |f| %>
         <div class="form-group">
           <%= f.text_field :name, placeholder: "Category name", class: "form-control" %>
@@ -19,6 +19,7 @@
     <thead>
       <tr>
         <th>餐廳分類</th>
+        <th></th>
       </tr>
     </thead>
 
@@ -26,6 +27,7 @@
       <% @categories.each do |category| %>
         <tr>
           <td><%= category.name %></td>
+          <td><%= link_to 'Edit', admin_categories_path(id: category.id) %>
         </tr>
       <% end %>
     </tbody>
