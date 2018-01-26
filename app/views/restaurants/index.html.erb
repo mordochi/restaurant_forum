@@ -1,1 +1,13 @@
-<h1>餐廳前台</h1>
+<div class="container clearfix">
+<% @restaurants.each do |restaurant| %>
+  <div class="restaurant-item col-md-4">
+    <%= image_tag restaurant.image %>
+    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+    <p class="category"><%= restaurant.category.name %></p>
+    <p><%= truncate(restaurant.description, length: 80) %></p>
+  </div>
+<% end %>
+
+<%= paginate @restaurants %>
+
+</div>
