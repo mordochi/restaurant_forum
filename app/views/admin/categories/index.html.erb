@@ -1,0 +1,19 @@
+<div class="container clearfix">
+  <h1>餐廳分類管理</h1><br><br>
+  <%= link_to '⏎ 餐廳管理', admin_restaurants_path, class: "under-title" %>
+  <table class="content table">
+    <thead>
+      <tr>
+        <th>餐廳分類</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

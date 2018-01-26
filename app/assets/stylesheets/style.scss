@@ -172,7 +172,7 @@ span{
 .container h1{
   display: inline-block;
   float: left;
-  margin-bottom: 15px;
+  
   margin-left: 10%;
 }
 
@@ -236,4 +236,11 @@ span{
 
 ul{
   color: #FF5151;
+}
+
+.under-title{
+  display: inline-block;
+  float: left;
+  margin-left: 10%;
+  font-size: 20px;
 }
