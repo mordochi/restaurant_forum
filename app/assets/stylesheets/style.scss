@@ -276,5 +276,8 @@ ul{
 
 .restaurant-item:hover{
   border: 1px solid rgba(20, 20, 20, 0.2);
-  
+}
+
+.restaurant-item p:nth-child(4){
+  color: #333;
 }
