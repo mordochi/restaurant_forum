@@ -1,6 +1,14 @@
 <div class="container clearfix">
   <h1>餐廳分類管理</h1><br><br>
   <%= link_to '⏎ 餐廳管理', admin_restaurants_path, class: "under-title" %>
+  <div class="form-inline">
+    <%= form_for [:admin, @category] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: "Category name", class: "form-control" %>
+      </div>
+      <%= f.submit class: "btn btn-default" %>
+    <% end %>
+  </div>
   <table class="content table">
     <thead>
       <tr>
