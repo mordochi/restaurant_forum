@@ -171,13 +171,11 @@ span{
 
 .container h1{
   display: inline-block;
-  border-bottom: 2px solid #333;
 }
 
 .container h3{
   display: inline;
-  float: left;
-  margin: 12px 30px;
+  margin-left: 30px;
   font-size: 20px;
 }
 
@@ -218,8 +216,15 @@ span{
   float: right;
 }
 
+.title{
+  border-bottom: 2px solid #333;
+}
+
 .title-btn{
-  margin-right: 10%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .form-box{
@@ -244,5 +249,6 @@ ul{
 .left{
   text-align: left;
   margin-left: 10%;
+  margin-right: 10%;
   position: relative;
 }

@@ -1,6 +1,6 @@
 <div class="container clearfix">
   <div class="left">
-  <h1>餐廳管理</h1>
+  <h1 class="title">餐廳管理</h1>
   <div class="btn btn-default circle">
     <a href="/admin/restaurants/new">
       <span class="glyphicon glyphicon-plus center" aria-hidden="true"></span>
@@ -23,9 +23,11 @@
         <tr>
           <td><%= restaurant.name %></td>
           <td><%= restaurant.category.name %></td>
-          <td><%= link_to 'Show', admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
-          <%= link_to 'Edit', edit_admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
-          <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %></td>
+          <td>
+            <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
+            <%= link_to 'Edit', edit_admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
+            <%= link_to 'Show', admin_restaurant_path(restaurant), class: "btn btn-default btn-right" %>
+          </td>
         </tr>
       <% end %>
     </tbody>
