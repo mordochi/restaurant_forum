@@ -46,7 +46,7 @@ img {
   margin: 100px auto;
   position: relative;
   text-align: center;
-  height: 100%;
+
 }
 
 section{
@@ -256,8 +256,14 @@ ul{
 
 .restaurant-item{
   padding: 20px;
-  height: 50%;
+  
   text-align: left;
+  border: 5px solid transparent;
+
+}
+
+.restaurant-item:hover{
+  border: 2px solid rgba(20, 20, 20, 0.2);
 }
 
 .restaurant-item h3{
@@ -274,9 +280,7 @@ ul{
   border-radius: 15px;
 }
 
-.restaurant-item:hover{
-  border: 1px solid rgba(20, 20, 20, 0.2);
-}
+
 
 .restaurant-item p:nth-child(4){
   color: #333;
@@ -287,5 +291,17 @@ ul{
 }
 
 .nav-center{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nav-center > li{
+float: none;
 display: inline-block;
+}
+
+.container a:nth-child(3n+4)::after{
+  content: " ";
+  clear: both;
+  display: table;
 }
