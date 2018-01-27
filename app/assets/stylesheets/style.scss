@@ -281,3 +281,11 @@ ul{
 .restaurant-item p:nth-child(4){
   color: #333;
 }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus{
+  background-color: #C6A300 !Important; 
+}
+
+.nav-center{
+display: inline-block;
+}
