@@ -28,6 +28,14 @@
       </li>
     </ul>
   </nav>
+  <% @restaurant.comments.each do |comment| %>
+    <div class="left">
+      <h4><%= comment.user.email.split('@')[0] %></h4><br>
+      <p><%= simple_format comment.content %></p><br>
+      <p class="text-muted"><em><%= time_ago_in_words(comment.created_at) %></em></p>
+      <hr>
+    </div>
+    <% end %>
   <div class="leave-messeges">
     <div class="row">
       <%= form_for [@restaurant, @comment] do |f| %>
