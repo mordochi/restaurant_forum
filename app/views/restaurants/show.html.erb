@@ -1,12 +1,12 @@
 <div class="container clearfix">
   <div class="left clearfix">
-  <h1><%= @restaurant.name %></h1>
-  <h3><%= "/ "+@restaurant.category.name %></h3>
-  <div class="title-btn">
-    <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant), class: "btn btn-default btn-right" %>
-    <%= link_to 'Delete', admin_restaurant_path(@restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
+    <h1><%= @restaurant.name %></h1>
+    <h3><%= "/ "+@restaurant.category.name %></h3>
+    <div class="title-btn">
+      <%= link_to 'Edit', edit_admin_restaurant_path(@restaurant), class: "btn btn-default btn-right" %>
+      <%= link_to 'Delete', admin_restaurant_path(@restaurant), method: :delete, data: {confirm:"Are you sure?"}, class: "btn btn-default btn-right" %>
+    </div>
   </div>
-</div>
   <div class="content">
     <p class="space">Opening Hours: </p><%= @restaurant.opening_hours %><br>
     <p class="space">Tel: </p><%= @restaurant.tel %><br>
@@ -18,14 +18,27 @@
     <ul class="pager clearfix">
       <li>
         <% if @restaurant.id != Restaurant.last.id %>
-          <%= link_to '←', admin_restaurant_path(@restaurant.id + 1), class: "btn btn-default" %>
+          <%= link_to '←', restaurant_path(@restaurant.id + 1), class: "btn btn-default" %>
         <% end %>
       </li>
       <li>
         <% if @restaurant.id != Restaurant.first.id %>
-          <%= link_to '→', admin_restaurant_path(@restaurant.id - 1), class: "btn btn-default" %>
+          <%= link_to '→', restaurant_path(@restaurant.id - 1), class: "btn btn-default" %>
         <% end %>
       </li>
     </ul>
   </nav>
+  <div class="leave-messeges">
+    <div class="row">
+      <%= form_for [@restaurant, @comment] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
+      </div>
+      <div class="form-group btn-left">
+        <%= f.button "Cancel", type: :reset, class: "btn btn-default" %>
+        <%= f.submit class: "btn btn-comment" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

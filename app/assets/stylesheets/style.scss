@@ -256,7 +256,6 @@ ul{
 
 .restaurant-item{
   padding: 20px;
-  
   text-align: left;
   border: 5px solid transparent;
 
@@ -304,4 +303,20 @@ display: inline-block;
   content: " ";
   clear: both;
   display: table;
+}
+
+.leave-messeges{
+  width: 30%;
+  margin-left: 15%;
+  margin-top: 70px;
+}
+
+.btn-left{
+  text-align: left;
+}
+
+.btn-comment{
+  background-color: #C6A300;
+  border: none;
+  color: #fff;
 }
