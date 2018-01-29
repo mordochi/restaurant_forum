@@ -12,8 +12,32 @@
       <% if current_user == @user %>
         <%= link_to "Edit", edit_user_path(@user), class: "btn btn-default" %>
       <% end %>
-      
     </div>
-    <hr>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= '共' + @commented_restaurants.length.to_s + '間已評論餐廳'%>
+        </h3>
+      </div>
+      <div class="panel-body cleafix">
+        <% @commented_restaurants.uniq %>
+        <% @commented_restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+            <div class="my-restaurant">
+              <div>
+                <% for img_id in 0..20 %>
+                  <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
+                    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <p><%= restaurant.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>

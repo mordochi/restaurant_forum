@@ -29,7 +29,6 @@ ul, ol {
 }
 
 a, a:hover, a:focus {
-  
   text-decoration: none;
   color: #C6A300;
 }
@@ -279,8 +278,6 @@ ul{
   border-radius: 15px;
 }
 
-
-
 .restaurant-item p:nth-child(4){
   color: #333;
 }
@@ -299,7 +296,7 @@ float: none;
 display: inline-block;
 }
 
-.container a:nth-child(3n+4)::after{
+.container .clearfix a:nth-child(3n+4)::after{
   content: " ";
   clear: both;
   display: table;
@@ -364,4 +361,33 @@ p.text-muted{
 
 .form-group img{
   width: 300px;
+}
+
+.panel{
+  margin-top: 50px;
+}
+
+.my-restaurant{
+  display: inline-block;
+  text-align: center;
+  padding: 7px 7px 0 7px;
+}
+
+.my-restaurant div{
+  height: 60px;
+}
+
+.my-restaurant img{
+  border-radius: 10px;
+  height: 100%;
+  width: auto;
+}
+
+.my-restaurant p{
+  font-size: 12px;
+}
+
+.my-restaurant:hover{
+  background-color: #f0f0f0;
+  border-radius: 10px;
 }
