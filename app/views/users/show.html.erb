@@ -21,7 +21,6 @@
         </h3>
       </div>
       <div class="panel-body cleafix">
-        <% @commented_restaurants.uniq %>
         <% @commented_restaurants.each do |restaurant| %>
           <%= link_to restaurant_path(restaurant) do %>
             <div class="my-restaurant">
