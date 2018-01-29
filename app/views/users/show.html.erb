@@ -1,12 +1,16 @@
 <div class="container">
   <div class="content">
-  <%= image_tag(@user.avatar, class: "avatar") if @user.avatar?%>
-  <div class="about-me">
-    <p><%= @user.email.split('@').first %></p>
-    <p><%= @user.email %></p>
-    <p><%= simple_format @user.intro %></p>
-    <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+    <% for img_id in 21..25 %>
+      <% if image_path(@user.avatar).include?('/'+img_id.to_s+'.jpg') %>
+        <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "avatar") if @user.avatar? %>
+      <% end %>
+    <% end %>
+    <div class="about-me">
+      <p><%= @user.email.split('@').first %></p>
+      <p><%= @user.email %></p>
+      <p><%= simple_format @user.intro %></p>
+      <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+    </div>
+    <hr>
   </div>
-  <hr>
-</div>
 </div>
