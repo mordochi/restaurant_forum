@@ -6,6 +6,7 @@ class Admin::RestaurantsController < Admin::BaseController
   
 def show
   @category = @restaurant.category_id
+  @category = @restaurant.category_id
   @comment = Comment.new
 end
 
