@@ -9,7 +9,10 @@
       <p><%= @user.email.split('@').first %></p>
       <p><%= @user.email %></p>
       <p><%= simple_format @user.intro %></p>
-      <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+      <% if current_user == @user %>
+        <%= link_to "Edit", edit_user_path(@user), class: "btn btn-default" %>
+      <% end %>
+      
     </div>
     <hr>
   </div>
