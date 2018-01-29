@@ -2,10 +2,10 @@
   <%= link_to restaurant_path(restaurant) do %>
     <div class="restaurant-item col-md-4">
       <% for img_id in 0..20 %>
-  <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
-    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
-  <% end %>
-<% end %>
+        <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
+          <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+        <% end %>
+      <% end %>
 
       <h3><%= restaurant.name %></h3>
       <p class="category"><%= restaurant.category.name %></p>
