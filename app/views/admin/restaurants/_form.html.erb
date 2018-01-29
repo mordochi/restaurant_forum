@@ -54,7 +54,7 @@
       <%= image_tag @restaurant.image, width: '300px' if @restaurant.image? %>
       <%= f.file_field :image %>
     </div>
-
+    
     <%= link_to 'Back', admin_restaurants_path, class: "btn btn-default" %>
     <%= f.submit class: "btn btn-default"%>
   <% end %>

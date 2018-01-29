@@ -4,6 +4,11 @@ class Admin::RestaurantsController < Admin::BaseController
     @restaurants = Restaurant.order(id: :desc).page(params[:page]).per(10)
   end
   
+def show
+  @category = @restaurant.category_id
+  @comment = Comment.new
+end
+
   def new
     @restaurant = Restaurant.new
   end
@@ -11,20 +16,20 @@ class Admin::RestaurantsController < Admin::BaseController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      flash[:notice] = "restaurant was successfully created"
+      flash[:notice] = "Restaurant was successfully created"
       redirect_to admin_restaurants_path
     else
-      flash.now[:alert] = "restaurant was failed to create"
+      flash.now[:alert] = "Restaurant was failed to create"
       render :new
     end
   end
 
   def update
     if @restaurant.update(restaurant_params)
-      flash[:notice] = "restaurant was successfully updated"
+      flash[:notice] = "Restaurant was successfully updated"
       redirect_to admin_restaurant_path(@restaurant)
     else
-      flash.now[:alert] = "restaurant was failed to update"
+      flash.now[:alert] = "Restaurant was failed to update"
       render :edit
     end
   end
@@ -32,7 +37,7 @@ class Admin::RestaurantsController < Admin::BaseController
   def destroy
     @restaurant.destroy
     redirect_to admin_restaurants_path
-    flash[:alert] = "restaurant was deleted"
+    flash[:alert] = "Restaurant was deleted"
   end
 
   private

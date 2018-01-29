@@ -12,7 +12,11 @@
     <p class="space">Tel: </p><%= @restaurant.tel %><br>
     <p class="space">Address: </p><%= @restaurant.address %><br><br>
     <p class="space">Description: </p><%= @restaurant.description %><br>
-    <%= image_tag @restaurant.image, width: '600px' %>
+    <% for img_id in 0..20 %>
+      <% if image_path(@restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
+        <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+      <% end %>
+    <% end %>
   </div>
   <nav aria-label="...">
     <ul class="pager clearfix">
@@ -28,4 +32,28 @@
       </li>
     </ul>
   </nav>
+  <% @restaurant.comments.each do |comment| %>
+    <div class="left">
+      <h4><%= comment.user.email.split('@')[0] %></h4><br>
+      <p><%= simple_format comment.content %></p><br>
+      <p class="text-muted"><em><%= time_ago_in_words(comment.created_at) %></em></p>
+      <% if current_user.admin? %>
+        <%= link_to "Delete", restaurant_comment_path(@restaurant, comment), method: :delete, class: "btn btn-default" %>
+      <% end %>
+      <hr>
+    </div>
+    <% end %>
+  <div class="leave-messages">
+    <div class="row">
+      <%= form_for [@restaurant, @comment] do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
+      </div>
+      <div class="form-group btn-left">
+        <%= f.button "Cancel", type: :reset, class: "btn btn-default" %>
+        <%= f.submit class: "btn btn-comment" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="content">
+  <%= image_tag(@user.avatar, class: "avatar") if @user.avatar?%>
+  <div class="about-me">
+    <p><%= @user.email.split('@').first %></p>
+    <p><%= @user.email %></p>
+    <p><%= simple_format @user.intro %></p>
+    <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+  </div>
+  <hr>
+</div>
+</div>

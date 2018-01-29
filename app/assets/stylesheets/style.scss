@@ -307,7 +307,7 @@ display: inline-block;
 
 .leave-messages{
   width: 30%;
-  margin-left: 15%;
+  margin-left: 12%;
   margin-top: 70px;
 }
 
@@ -324,4 +324,40 @@ display: inline-block;
 p.text-muted{
   display: inline-block;
   margin-right: 30px;
+}
+
+.my-name{
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin-right: 20px;
+}
+
+.avatar{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  margin-right: 50px;
+}
+
+.about-me{
+  display: inline-block;
+  text-align: left;
+}
+
+.about-me p:nth-child(1){
+  font-weight: 900;
+  font-size: 35px;
+}
+
+.about-me p:nth-child(2){
+  font-weight: 900;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.about-me p:nth-child(4){
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
