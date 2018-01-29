@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @category = @restaurant.category_id
     @comment = Comment.new
   end
 end
