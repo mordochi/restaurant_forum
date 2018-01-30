@@ -291,12 +291,16 @@ ul{
   margin-bottom: 50px;
 }
 
+.nav{
+  margin-bottom: 50px;
+}
+
 .nav-center > li{
 float: none;
 display: inline-block;
 }
 
-.container > a:nth-child(3n+4)::after{
+.container > a:nth-child(3n+5)::after{
   content: " ";
   clear: both;
   display: table;
@@ -365,6 +369,8 @@ p.text-muted{
 
 .panel{
   margin-top: 50px;
+  padding: 0;
+  text-align: left;
 }
 
 .my-restaurant{
@@ -390,4 +396,19 @@ p.text-muted{
 .my-restaurant:hover{
   background-color: #f0f0f0;
   border-radius: 10px;
+}
+
+.block{
+  display: block !Important;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.middle{
+  display: inline-block;
+  margin: auto;
+}
+
+.panel-title{
+  margin-left: 0!Important;
 }
