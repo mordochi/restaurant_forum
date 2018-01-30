@@ -296,7 +296,7 @@ float: none;
 display: inline-block;
 }
 
-.container .clearfix a:nth-child(3n+4)::after{
+.container > a:nth-child(3n+4)::after{
   content: " ";
   clear: both;
   display: table;
