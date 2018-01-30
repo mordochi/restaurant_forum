@@ -299,7 +299,7 @@ float: none;
 display: inline-block;
 }
 
-.container > a:nth-child(3n+5)::after{
+.container > a:nth-child(3n+9)::after{
   content: " ";
   clear: both;
   display: table;
@@ -414,4 +414,16 @@ p.text-muted{
 
 .dash{
   color: #333;
+}
+
+.fav{
+  background-color: #C6A300;
+  color: #fff!Important;
+  border: none;
+}
+
+.unfav{
+  background-color: #e0e0e0;
+  color: #fff!Important;
+  border: none;
 }
