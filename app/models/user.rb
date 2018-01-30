@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :restaurants, through: :comments
   has_many :favorites, dependent: :destroy
   has_many :favorited_restaurants, through: :favorites, source: :restaurant
+  has_many :likes, dependent: :destroy
+  has_many :lied_restaurants, through: :likes, source: :restaurant
   validates_presence_of :name
   mount_uploader :avatar, AvatarUploader
   
