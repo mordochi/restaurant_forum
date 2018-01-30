@@ -23,6 +23,7 @@ namespace :dev do
       User.create!(name: user_name,
         email: "#{user_name}@example.com",
         password: "test123",
+        avatar: File.open(File.join(Rails.root, "/public/seed_img/#{rand(12..16)}.jpg"))
       )
     end
     puts "now you have #{User.count} user data"

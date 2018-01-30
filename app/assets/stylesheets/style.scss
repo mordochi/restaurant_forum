@@ -427,3 +427,42 @@ p.text-muted{
   color: #fff!Important;
   border: none;
 }
+
+.users{
+  display: inline-block;
+  margin: 30px;
+  text-align: center;
+  padding: 7px 7px 7px 7px;
+}
+
+.users-avatar{
+  display: block;
+}
+
+.pic{
+  height: 100px;
+  padding: 10px;
+}
+
+.users img{
+  height: 100%;
+  width: auto;
+}
+
+.all-users{
+  display: inline-block;
+  margin: 55px auto 30px auto;
+  width: 80%;
+  text-align: left;
+}
+
+.btn-follow{
+  color: #C6A300 !Important;
+  background-color: #fff;
+  border-color: #ccc;
+  margin-top: 5px;
+}
+
+.users :hover{
+  background-color: #f0f0f0;
+}

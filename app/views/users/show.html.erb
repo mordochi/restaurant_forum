@@ -1,6 +1,6 @@
 <div class="container">
   <div class="content">
-    <% for img_id in 21..25 %>
+    <% for img_id in 11..16 %>
       <% if image_path(@user.avatar).include?('/'+img_id.to_s+'.jpg') %>
         <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "avatar") if @user.avatar? %>
       <% end %>
@@ -25,7 +25,7 @@
           <%= link_to restaurant_path(restaurant) do %>
             <div class="my-restaurant">
               <div>
-                <% for img_id in 0..20 %>
+                <% for img_id in 0..10 %>
                   <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
                     <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
                   <% end %>
