@@ -153,6 +153,7 @@ input.btn{
 
 .btn-default{
   color: #C6A300 !Important;
+  margin-right: 20px;
 }
 
 .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
@@ -221,10 +222,8 @@ span{
 }
 
 .title-btn{
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: block;
+  margin-top: 30px;
 }
 
 .form-box{
