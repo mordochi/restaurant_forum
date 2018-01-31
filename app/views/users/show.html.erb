@@ -2,7 +2,7 @@
   <div class="content">
     <% for img_id in 11..16 %>
       <% if image_path(@user.avatar).include?('/'+img_id.to_s+'.jpg') %>
-        <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "avatar") if @user.avatar? %>
+        <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "avatar") %>
       <% end %>
     <% end %>
     <div class="about-me">

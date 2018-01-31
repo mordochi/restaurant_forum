@@ -14,7 +14,7 @@
             <div class="pic">
               <% for img_id in 11..16 %>
                 <% if image_path(user.avatar).include?('/'+img_id.to_s+'.jpg') %>
-                  <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "users-avatar") if user.avatar? %>
+                  <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "users-avatar") %>
                 <% end %>
               <% end %>
             </div>
