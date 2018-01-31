@@ -429,13 +429,15 @@ p.text-muted{
 
 .users{
   display: inline-block;
-  margin: 30px;
+  margin: 15px;
   text-align: center;
   padding: 7px 7px 7px 7px;
+  width: 177.5px;
 }
 
 .users-avatar{
   display: block;
+  margin: auto;
 }
 
 .pic{
@@ -465,8 +467,6 @@ p.text-muted{
 .users :hover{
   background-color: #f0f0f0;
 }
-
-
 
 .my-user div{
   height: 60px;
