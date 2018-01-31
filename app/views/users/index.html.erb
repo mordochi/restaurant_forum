@@ -4,27 +4,28 @@
     <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li>
     <li role="presentation" class="active"><%= link_to "美食達人", users_path %></li>
   </ul>
-  <h1 class="block">美食達人</h1>
-  
+  <div class="content">
+    <h1>美食達人</h1>
+  </div>
   <div class="all-users">
     <% @users.each do |user| %>
-      <div class="users">
-        <%= link_to user_path(user) do %>
-          <div>
-            <div class="pic">
-              <% for img_id in 11..16 %>
-                <% if image_path(user.avatar).include?('/'+img_id.to_s+'.jpg') %>
-                  <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "users-avatar") %>
+      <% if user != current_user %>
+        <div class="users">
+          <%= link_to user_path(user) do %>
+            <div>
+              <div class="pic">
+                <% for img_id in 11..16 %>
+                  <% if image_path(user.avatar).include?('/'+img_id.to_s+'.jpg') %>
+                    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "users-avatar") %>
+                  <% end %>
                 <% end %>
-              <% end %>
+              </div>
+              <p><%= user.name %></p>
             </div>
-            <p><%= user.name %></p>
-          </div>
-        <% end %>
-        <% if user != current_user %>
+          <% end %>
           <%= render partial: "shared/follow", locals: {user: user} %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

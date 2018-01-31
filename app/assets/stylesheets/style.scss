@@ -400,7 +400,6 @@ p.text-muted{
 .block{
   display: block !Important;
   text-align: left;
-  margin-left: 10%;
 }
 
 .middle{
@@ -465,4 +464,21 @@ p.text-muted{
 
 .users :hover{
   background-color: #f0f0f0;
+}
+
+
+
+.my-user div{
+  height: 60px;
+  display: inline-block;
+}
+
+.my-user img{
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+
+.my-user p{
+  display: inline-block;
 }

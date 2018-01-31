@@ -1,5 +1,6 @@
 <div class="container">
   <div class="content">
+    <div>
     <% for img_id in 11..16 %>
       <% if image_path(@user.avatar).include?('/'+img_id.to_s+'.jpg') %>
         <%= image_tag('/seed_img/'+img_id.to_s+'.jpg', class: "avatar") %>
@@ -12,8 +13,69 @@
       <% if current_user == @user %>
         <%= link_to "Edit", edit_user_path(@user), class: "btn btn-default" %>
       <% end %>
+      <% if @user != current_user %>
+        <%= render partial: "shared/follow", locals: {user: @user} %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @followings.length.to_s + ' followings'%>
+        </h3>
+      </div>
+      <div class="panel-body cleafix">
+        <% @followings.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <div class="my-user">
+              <div>
+                <% for img_id in 11..16 %>
+                  <% if image_path(user.avatar).include?('/'+img_id.to_s+'.jpg') %>
+                    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <p><%= user.name %></p>
+            </div>
+            <% if user != @followings.last %>
+              <hr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @followers.length.to_s + ' followers'%>
+        </h3>
+      </div>
+      <div class="panel-body cleafix">
+        <% @followers.each do |user| %>
+          <%= link_to user_path(user) do %>
+            <div class="my-user">
+              <div>
+                <% for img_id in 11..16 %>
+                  <% if image_path(user.avatar).include?('/'+img_id.to_s+'.jpg') %>
+                    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <p><%= user.name %></p>
+            </div>
+            <% if user != @followers.last %>
+              <hr>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -38,5 +100,29 @@
       </div>
     </div>
 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= '共' + @favorited_restaurants.length.to_s + '間收藏餐廳'%>
+        </h3>
+      </div>
+      <div class="panel-body cleafix">
+        <% @favorited_restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+            <div class="my-restaurant">
+              <div>
+                <% for img_id in 0..10 %>
+                  <% if image_path(restaurant.image).include?('/'+img_id.to_s+'.jpg') %>
+                    <%= image_tag('/seed_img/'+img_id.to_s+'.jpg') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <p><%= restaurant.name %></p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
+
 </div>
